@@ -77,7 +77,7 @@
 
 /obj/machinery/voxfab
 	name = "Vox biogenerator"
-	desc = "A pulsating mass of flesh and steel"
+	desc = "A pulsating mass of flesh and metal."
 	icon = 'icons/obj/vox.dmi'
 	icon_state = "printer"
 	density = 1
