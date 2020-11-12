@@ -87,6 +87,7 @@
 "bI" = (/obj/machinery/door/airlock/multi_tile/civilian,/obj/machinery/door/firedoor,/obj/effect/decal/cleanable/blood/tracks/body,/turf/simulated/floor/tiled/techfloor/grid,/area/miningstation/hangar)
 "bJ" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/door/firedoor,/turf/space,/area/miningstation/hangar)
 "bK" = (/obj/machinery/door/airlock/multi_tile/civilian,/obj/machinery/door/firedoor,/turf/simulated/floor/tiled/techfloor/grid,/area/miningstation/hangar)
+"bL" = (/obj/effect/shuttle_landmark/nav_miningstation/mining_hangar,/turf/simulated/floor/plating,/area/miningstation/hangar)
 "bM" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/door/firedoor,/turf/simulated/floor/tiled/techfloor/grid,/area/miningstation/hangar)
 "bN" = (/obj/effect/paint/black,/turf/simulated/wall/r_titanium,/area/miningstation/prep2)
 "bO" = (/obj/structure/catwalk,/turf/simulated/floor/airless/ceiling,/area/miningstation/power)
@@ -933,7 +934,6 @@
 "HK" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled/white,/area/miningstation/intensive)
 "HP" = (/mob/living/simple_animal/hostile/meat/horrorminer,/turf/simulated/floor/tiled/techfloor/grid,/area/miningstation/prep2)
 "Ip" = (/obj/structure/cable{icon_state = "2-8"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 10},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/turf/simulated/floor/tiled/techfloor/grid,/area/miningstation/hangarhall)
-"Iv" = (/obj/effect/shuttle_landmark/automatic,/turf/simulated/floor/plating,/area/miningstation/hangar)
 "ID" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/light_switch{pixel_x = -32},/turf/simulated/floor/tiled/techfloor,/area/miningstation/mess)
 "Jd" = (/obj/effect/paint/black,/obj/structure/reagent_dispensers/acid,/turf/simulated/wall/r_titanium,/area/miningstation/prep)
 "Jr" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/turf/simulated/floor/tiled/white,/area/miningstation/cryo)
@@ -1035,7 +1035,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacrcrcrcrcrcrcrfWfWfWcrcrcrfWfWfWfWfWfWcrfW
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacrcrcrfWcrcrfWfWfWcrcrcrcrfWfWfWfWfWfWcrcrjRcrfWfWfWcrfWfWcogNagagagapavawawawawawawawawawawawawawawawawawawawawaxapagagagcoaaaaaaaaaaaaaaaIaIaIaIaIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacrcrcrfWfWfWfWfWfWfWfWfWfWfWfWfWfWfWfWcrcrfWcrfWfWfWfWfWfWcoaiaggNagapavawawawawawawawawawawawawawawawawawawawawaxapagagajcoaKaKaKaKaKaKaKaKaMaMaMaKaKaKaKaKaKaKaKaKaKaJaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacrcrfWfWfWfWfWfWfWfWfWfWfWfWfWfWfWfWcrcrfWfWfWfWfWfWfWfWcoagagagakaBavawawawawawawawawawawawawawawawawawawawawaxaGaqagagcoaEaEaEaEaEaEaEaEaMaQaMaEaEaEaEaEaEaEaEaEaEaKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacrcrfWfWfWfWfWfWfWfWfWfWfWfWfWfWfWfWcrcrfWfWfWfWfWfWfWfWcoagagahagapavawawawawawawawawawawIvawawawawawawawawawaxapagagagcoaEaMaMaNaOaPaOaPaObHaOaPaOaPaOaPaOaRaMaMaEaKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacrcrfWfWfWfWfWfWfWfWfWfWfWfWfWfWfWfWcrcrfWfWfWfWfWfWfWfWcoagagahagapavawawawawawawawawawawbLawawawawawawawawawaxapagagagcoaEaMaMaNaOaPaOaPaObHaOaPaOaPaOaPaOaRaMaMaEaKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafWcrcrfWfWfWfWfWfWfWfWfWcrcrcrcrcrcrfWfWfWfWfWfWfWfWcoaggNagagapavawawawawawawawawawawawawawawawawawawawawaxapagahagcoaEaMaUaVcDaVdTaVdTaVdTaVdTaVdTaVcDaVcDaMaEaKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacrcrcrcrfWcrcrcrcrcrcrcrcrcrfWfWfWfWcrfWfWfWfWfWfWfWaocoaiagagagapavawawawawawawawawawawawawawawawawawawawawaxapagagajcoaEaMaUaVcDaVdTaVdTaVdTaVdTaVdTaVcDaVcDaMaEaKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacrcrjRcrfWfWfWcrfWcrfWfWfWfWfWfWfWcrcrfWfWfWfWfWfWfWaocoagaggNagapavawawawawawawawawawawawawawawawawawawawawaxapagagagcoaEaMaUaVcDaVdTaVdTaVdTaVdTaVdTaVcDaVcDaMaEaKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
