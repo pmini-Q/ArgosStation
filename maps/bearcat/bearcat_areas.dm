@@ -203,3 +203,36 @@
   name = "\improper Cargo Lift"
   icon_state = "shuttle3"
   base_turf = /turf/simulated/open
+
+//Centcomm
+
+/area/shuttle/transport1/centcom
+	icon_state = "shuttle"
+	name = "\improper Transport Shuttle Centcom"
+
+/area/centcom/control
+	name = "\improper Centcom Control"
+
+/area/centcom/creed
+	name = "Creed's Office"
+
+/area/centcom/evac
+	name = "\improper Centcom Emergency Shuttle"
+
+/area/centcom/ferry
+	name = "\improper Centcom Transport Shuttle"
+
+/area/centcom/living
+	name = "\improper Centcom Living Quarters"
+
+/area/centcom/suppy
+	name = "\improper Centcom Supply Shuttle"
+
+/area/centcom/test
+	name = "\improper Centcom Testing Facility"
+
+/area/shuttle/administration/centcom
+	name = "\improper Administration Shuttle"
+	icon_state = "shuttlered"
+	req_access = list(access_cent_general)
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
