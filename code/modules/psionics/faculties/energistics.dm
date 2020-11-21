@@ -12,8 +12,8 @@
 // Spark, allows you to create sparks and potentially start fires.
 /decl/psionic_power/energistics/spark
 	name =			  "Spark"
-	cost =            1
-	cooldown =        1
+	cost =            8
+	cooldown =        10
 	use_melee =       TRUE
 	min_rank =        PSI_RANK_OPERANT
 	use_description = "Target a non-living target in melee range on harm intent to cause some sparks to appear. This can light fires."
@@ -35,8 +35,8 @@
 // Flare, allows you to flash someone with a burst from your glowy eyes, provided they're enabled.
 /decl/psionic_power/energistics/flare
 	name =			  "Flare"
-	cost =            10
-	cooldown =        75
+	cost =            20
+	cooldown =        80
 	use_melee =       TRUE
 	min_rank =        PSI_RANK_OPERANT
 	use_description = "With your Psi-Ocular Luminescence active, target the eyes while on harm intent in melee range to unleash a burst of light and stun the target."
@@ -116,7 +116,7 @@
 // Disrupt, allows you to create a localised electromagnetic pulse against a nearby target.
 /decl/psionic_power/energistics/disrupt
 	name =            "Disrupt"
-	cost =            10
+	cost =            20
 	cooldown =        100
 	use_melee =       TRUE
 	min_rank =        PSI_RANK_MASTER
@@ -136,8 +136,8 @@
 // Zorch, allows you to fire tasers, lasers, or deadlier lasers from your eyes. Lethality scales with Energistics rank.
 /decl/psionic_power/energistics/zorch
 	name =             "Zorch"
-	cost =             20
-	cooldown =         20
+	cost =             25
+	cooldown =         80
 	use_ranged =       TRUE
 	min_rank =         PSI_RANK_MASTER
 	use_description = "Use this ranged laser attack while on harm intent. Your mastery of Energistics will determine how powerful the laser is. Be wary of overuse, and try not to fry your own brain."
@@ -179,8 +179,8 @@
 // Electrocute, allows you to electrocute a target at melee range.
 /decl/psionic_power/energistics/electrocute
 	name =            "Electrocute"
-	cost =            15
-	cooldown =        25
+	cost =            30
+	cooldown =        100
 	use_melee =       TRUE
 	min_rank =        PSI_RANK_GRANDMASTER
 	use_description = "Target the chest or groin while on harm intent to use a melee attack that electrocutes a victim."
