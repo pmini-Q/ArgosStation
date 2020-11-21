@@ -26,7 +26,7 @@
 	return ITEM_SIZE_NO_CONTAINER
 
 /obj/item/psychic_power/attack_self(var/mob/user)
-	sound_to(owner, 'sound/effects/psi/power_fail.ogg')
+	//sound_to(owner, 'sound/effects/psi/power_fail.ogg')
 	user.drop_from_inventory(src)
 
 /obj/item/psychic_power/attack(var/mob/living/M, var/mob/living/user, var/target_zone)
@@ -42,6 +42,7 @@
 	. = ..(target, user, proximity)
 
 /obj/item/psychic_power/dropped()
+	sound_to(owner, 'sound/effects/psi/power_fail.ogg')
 	..()
 	qdel(src)
 

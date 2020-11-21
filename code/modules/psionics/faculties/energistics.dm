@@ -32,6 +32,30 @@
 			sparks.start()
 		return TRUE
 
+// Arc, allows you to manifest a small beam of energy that functions as a welding tool.
+/decl/psionic_power/energistics/arc
+	name =			  "Arc"
+	cost =            16
+	cooldown =        30
+	use_melee =       TRUE
+	min_rank =        PSI_RANK_OPERANT
+	use_description = "Click on or otherwise activate an empty hand while targeting the hands or arms on harm intent to manifest a small beam of energy that functions as a welding tool. This can light fires."
+
+/decl/psionic_power/energistics/arc/invoke(var/mob/living/user, var/mob/living/target)
+	if((target && user != target) || user.a_intent != I_HURT)
+		return FALSE
+
+	if(!(user.zone_sel.selecting in list(BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND)))
+		return FALSE
+
+	. = ..()
+	if(.)
+		to_chat(user, "<span class='notice'>You begin projecting a small electrical arc from your hand.</span>")
+		user.visible_message("<b>[user]</b> begins projecting a small electrical arc from \his hand.", \
+		"<b>[user]</b> begins projecting a small electrical arc from \his hand.")
+		sound_to(user, 'sound/effects/psi/power_fabrication.ogg')
+		return new /obj/item/psychic_power/arc_welder(user, user)
+
 // Flare, allows you to flash someone with a burst from your glowy eyes, provided they're enabled.
 /decl/psionic_power/energistics/flare
 	name =			  "Flare"
