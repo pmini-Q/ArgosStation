@@ -6,8 +6,7 @@
 
 /obj/item/psychic_power/Destroy()
 	to_chat(owner, "<span class='notice'>You stop projecting a small electrical arc from your hand.</span>")
-	owner.visible_message("<b>[owner]</b> stops projecting a small electrical arc from \his hand.", \
-	"<b>[owner]</b> stops projecting a small electrical arc from \his hand.")
+	owner.visible_message("<b>\The [owner]</b> stops projecting a small electrical arc from \his hand.")
 	..()
 
 /obj/item/psychic_power/arc_welder/attack(mob/living/target, mob/living/user, target_zone)

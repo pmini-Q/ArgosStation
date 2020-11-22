@@ -118,7 +118,7 @@
 /decl/psionic_power/coercion/agony
 	name =          "Agony"
 	cost =          30
-	cooldown =      80
+	cooldown =      100
 	use_melee =     TRUE
 	min_rank =      PSI_RANK_MASTER
 	use_description = "Target the chest or groin on disarm intent to use a melee attack equivalent to a strike from a stun baton."
@@ -138,8 +138,8 @@
 // Spasm, allows you ranged attack someone's hand or arm with a chance to make them drop whatever they're holding.
 /decl/psionic_power/coercion/spasm
 	name =           "Spasm"
-	cost =           15
-	cooldown =       100
+	cost =           20
+	cooldown =       80
 	use_melee =      TRUE
 	use_ranged =     TRUE
 	min_rank =       PSI_RANK_MASTER

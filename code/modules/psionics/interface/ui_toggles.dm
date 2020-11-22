@@ -83,8 +83,7 @@
 
 			if(!click_params["alt"] && !click_params["ctrl"])
 				to_chat(M, "<span class='notice'>You are now using your psionics to emit a visible glow from your eyes.</span>")
-				M.visible_message("<font color='[M.psi.eye_glow_colour]'><b>[M]'s</b> eyes flare with a bright coloured glow!</font>", \
-				"<font color='[M.psi.eye_glow_colour]'><b>[M]'s</b> eyes flare with a bright coloured glow!</font>")
+				M.visible_message("<font color='[M.psi.eye_glow_colour]'><b>[M]'s</b> eyes flare with a bright coloured glow!</font>")
 
 			var/r_eyes_new = hex2num(copytext(M.psi.eye_glow_colour, 2, 4))
 			var/b_eyes_new = hex2num(copytext(M.psi.eye_glow_colour, 4, 6))
@@ -101,8 +100,7 @@
 		else
 			if(!click_params["alt"] && !click_params["ctrl"])
 				to_chat(M, "<span class='notice'>You are no longer using your psionics to emit a visible glow from your eyes.</span>")
-				M.visible_message("<b>[M]'s</b> eyes return to a natural colour.", \
-				"<b>[M]'s</b> eyes return to a natural colour.")
+				M.visible_message("<b>[M]'s</b> eyes return to a natural colour.")
 
 			M.r_eyes = r_eye_colour_prev
 			M.b_eyes = b_eye_colour_prev
