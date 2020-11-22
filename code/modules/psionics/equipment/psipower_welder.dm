@@ -4,7 +4,7 @@
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	force = 1
 
-/obj/item/psychic_power/Destroy()
+/obj/item/psychic_power/arc_welder/Destroy()
 	to_chat(owner, "<span class='notice'>You stop projecting a small electrical arc from your hand.</span>")
 	owner.visible_message("<b>\The [owner]</b> stops projecting a small electrical arc from \his hand.")
 	..()
