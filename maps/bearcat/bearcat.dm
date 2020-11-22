@@ -15,6 +15,7 @@
 	#include "bearcat_npcs.dm"
 	#include "bearcat-1.dmm"
 	#include "bearcat-2.dmm"
+	#include "z1_admin.dmm"
 
 	#include "../away/empty.dmm"
 	#include "../away/ascent/ascent.dm"
