@@ -82,8 +82,8 @@
 			b_eye_colour_prev = M.b_eyes
 
 			if(!click_params["alt"] && !click_params["ctrl"])
-				M.visible_message("<font color='[M.psi.eye_glow_colour]'><b>[M]'s</b> eyes flare with a bright coloured glow!</font>", \
-				"<span class='notice'>You use your psionics to emit a visible glow from your eyes.</span>")
+				to_chat(M, "<span class='notice'>You are now using your psionics to emit a visible glow from your eyes.</span>")
+				M.visible_message("<font color='[M.psi.eye_glow_colour]'><b>[M]'s</b> eyes flare with a bright coloured glow!</font>")
 
 			var/r_eyes_new = hex2num(copytext(M.psi.eye_glow_colour, 2, 4))
 			var/b_eyes_new = hex2num(copytext(M.psi.eye_glow_colour, 4, 6))
@@ -99,8 +99,8 @@
 			M.set_light(0.15*M.psi.eye_glow_level, 1, 2, 2, M.psi.eye_glow_colour)
 		else
 			if(!click_params["alt"] && !click_params["ctrl"])
-				M.visible_message("<font color='[M.psi.eye_glow_colour]'><b>[M]'s</b> eyes return to a natural colour.</font>", \
-				"<span class='notice'>You are no longer using your psionics to emit a visible glow from your eyes.</span>")
+				to_chat(M, "<span class='notice'>You are no longer using your psionics to emit a visible glow from your eyes.</span>")
+				M.visible_message("<b>[M]'s</b> eyes return to a natural colour.")
 
 			M.r_eyes = r_eye_colour_prev
 			M.b_eyes = b_eye_colour_prev

@@ -41,7 +41,7 @@
 /decl/psionic_power/psychokinesis/tinker
 	name =            "Tinker"
 	cost =            15
-	cooldown =        15
+	cooldown =        20
 	min_rank =        PSI_RANK_MASTER
 	use_description = "Click on or otherwise activate an empty hand while on help intent to manifest a psychokinetic tool. Use it in-hand to switch between tool types."
 	admin_log = FALSE
@@ -58,8 +58,8 @@
 // Telekinesis, allows you to manipulate objects, mobs and machinery at a distance.
 /decl/psionic_power/psychokinesis/telekinesis
 	name =            "Telekinesis"
-	cost =            15
-	cooldown =        20
+	cost =            20
+	cooldown =        25
 	use_ranged =      TRUE
 	use_manifest =    FALSE
 	min_rank =        PSI_RANK_GRANDMASTER
@@ -102,11 +102,11 @@
 
 // PARAMOUNT POWERS
 
-// Teleport, allows you to locally teleport short distances.
-/decl/psionic_power/psychokinesis/teleport
-	name =            "Teleport"
+// Translocate, allows you to locally teleport short distances.
+/decl/psionic_power/psychokinesis/translocate
+	name =            "Translocate"
 	cost =            38
-	cooldown =        200
+	cooldown =        180
 	use_ranged =      TRUE
 	use_manifest =    FALSE
 	min_rank =        PSI_RANK_PARAMOUNT
@@ -133,7 +133,7 @@
 				to_chat(user, "<span class='warning'>You cannot teleport to a location with solid objects.</span>")
 				return FALSE
 
-			user.visible_message("<span class='notice'>\The [user] makes a snapping motion with their arms.</span>")
+			user.visible_message("<span class='notice'>\The [user] makes a snapping motion with \his arms.</span>")
 			user.phase_out(get_turf(user))
 			user.forceMove(target)
 			user.phase_in(get_turf(user))

@@ -32,11 +32,34 @@
 			sparks.start()
 		return TRUE
 
+// Arc, allows you to manifest a small beam of energy that functions as a welding tool.
+/decl/psionic_power/energistics/arc
+	name =			  "Arc"
+	cost =            16
+	cooldown =        30
+	use_melee =       TRUE
+	min_rank =        PSI_RANK_OPERANT
+	use_description = "Click on or otherwise activate an empty hand while targeting the hands or arms on harm intent to manifest a small beam of energy that functions as a welding tool. This can light fires."
+
+/decl/psionic_power/energistics/arc/invoke(var/mob/living/user, var/mob/living/target)
+	if((target && user != target) || user.a_intent != I_HURT)
+		return FALSE
+
+	if(!(user.zone_sel.selecting in list(BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND)))
+		return FALSE
+
+	. = ..()
+	if(.)
+		to_chat(user, "<span class='notice'>You begin projecting a small electrical arc from your hand.</span>")
+		user.visible_message("<b>\The [user]</b> begins projecting a small electrical arc from \his hand.")
+		sound_to(user, 'sound/effects/psi/power_fabrication.ogg')
+		return new /obj/item/psychic_power/arc_welder(user, user)
+
 // Flare, allows you to flash someone with a burst from your glowy eyes, provided they're enabled.
 /decl/psionic_power/energistics/flare
 	name =			  "Flare"
 	cost =            20
-	cooldown =        80
+	cooldown =        65
 	use_melee =       TRUE
 	min_rank =        PSI_RANK_OPERANT
 	use_description = "With your Psi-Ocular Luminescence active, target the eyes while on harm intent in melee range to unleash a burst of light and stun the target."
@@ -103,11 +126,11 @@
 
 		if(!flashfail)
 			if(!issilicon(target))
-				user.visible_message("<span class='disarm'>[user] blinds [target] with a flare from their eyes!</span>")
+				user.visible_message("<span class='disarm'>\The [user] blinds [target] with a flare from their eyes!</span>")
 			else
-				user.visible_message("<span class='notice'>[user] overloads [target]'s sensors with a flare from their eyes!</span>")
+				user.visible_message("<span class='notice'>\The [user] overloads [target]'s sensors with a flare from their eyes!</span>")
 		else
-			user.visible_message("<span class='notice'>[user] fails to blind [target] with a flare from their eyes!</span>")
+			user.visible_message("<span class='notice'>\The [user] fails to blind [target] with a flare from their eyes!</span>")
 
 		return TRUE
 
@@ -137,7 +160,7 @@
 /decl/psionic_power/energistics/zorch
 	name =             "Zorch"
 	cost =             25
-	cooldown =         80
+	cooldown =         65
 	use_ranged =       TRUE
 	min_rank =         PSI_RANK_MASTER
 	use_description = "Use this ranged laser attack while on harm intent. Your mastery of Energistics will determine how powerful the laser is. Be wary of overuse, and try not to fry your own brain."
