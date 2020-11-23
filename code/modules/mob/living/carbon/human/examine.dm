@@ -81,11 +81,11 @@
 		msg += "[T.He] [T.has] [back.get_examine_line()] on [T.his] back.\n"
 
 	//left hand
-	if(l_hand)
+	if(l_hand && !istype(l_hand, /obj/item/psychic_power))
 		msg += "[T.He] [T.is] holding [l_hand.get_examine_line()] in [T.his] left hand.\n"
 
 	//right hand
-	if(r_hand)
+	if(r_hand && !istype(r_hand, /obj/item/psychic_power))
 		msg += "[T.He] [T.is] holding [r_hand.get_examine_line()] in [T.his] right hand.\n"
 
 	//gloves
