@@ -44,7 +44,7 @@ Small, little HP, poisonous.
 	return L
 
 /mob/living/simple_animal/hostile/voxslug/get_scooped(var/mob/living/carbon/grabber)
-	if(grabber.species.get_bodytype() != SPECIES_VOX)
+	if(grabber.species.get_bodytype() != SPECIES_VOX || grabber.species.get_bodytype() != SPECIES_VOX_ARMALIS)
 		to_chat(grabber, "<span class='warning'>\The [src] wriggles out of your hands before you can pick it up!</span>")
 		return
 	else return ..()
