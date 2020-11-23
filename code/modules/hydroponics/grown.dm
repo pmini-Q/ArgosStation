@@ -197,6 +197,9 @@
 						user.visible_message("<span class='notice'>\The [user] makes planks out of \the [src].</span>")
 						new /obj/item/stack/material/wood/bamboo(user.loc)
 						qdel(src)
+					else if(!isnull(seed.chems[/datum/reagent/resinpulp]))
+						user.visible_message("<span class='notice'>\The [user] cuts \the [src] into slabs.</span>")
+						qdel(src)
 					return
 				else if(!isnull(seed.chems[/datum/reagent/drink/juice/potato]))
 					to_chat(user, "You slice \the [src] into sticks.")
