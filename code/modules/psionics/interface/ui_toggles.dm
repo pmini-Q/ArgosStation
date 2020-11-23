@@ -35,6 +35,9 @@
 		return
 
 	var/list/click_params = params2list(params)
+	if(click_params["shift"])
+		// Placeholder for info popup on shift click a la psi_hub button.
+
 	if(click_params["alt"])
 		if(ishuman(owner))
 			var/new_glow = input("Please select luminescence colour.", "Luminescence Colour", owner.psi.eye_glow_colour) as color|null
@@ -73,7 +76,7 @@
 		var/g_eye_colour_prev
 		var/b_eye_colour_prev
 
-		if(!click_params["alt"] && !click_params["ctrl"])
+		if(!click_params["alt"] && !click_params["ctrl"] && !click_params["shift"])
 			M.psi.use_eye_glow = !M.psi.use_eye_glow
 
 		if(M.psi.use_eye_glow)
@@ -81,7 +84,7 @@
 			g_eye_colour_prev = M.g_eyes
 			b_eye_colour_prev = M.b_eyes
 
-			if(!click_params["alt"] && !click_params["ctrl"])
+			if(!click_params["alt"] && !click_params["ctrl"] && !click_params["shift"])
 				to_chat(M, "<span class='notice'>You are now using your psionics to emit a visible glow from your eyes.</span>")
 				M.visible_message("<font color='[M.psi.eye_glow_colour]'><b>[M]'s</b> eyes flare with a bright coloured glow!</font>")
 
@@ -98,7 +101,7 @@
 
 			M.set_light(0.15*M.psi.eye_glow_level, 1, 2, 2, M.psi.eye_glow_colour)
 		else
-			if(!click_params["alt"] && !click_params["ctrl"])
+			if(!click_params["alt"] && !click_params["ctrl"] && !click_params["shift"])
 				to_chat(M, "<span class='notice'>You are no longer using your psionics to emit a visible glow from your eyes.</span>")
 				M.visible_message("<b>[M]'s</b> eyes return to a natural colour.")
 
