@@ -1,3 +1,4 @@
+
 /obj/item/psychic_power/arc_welder
 	name = "energistic arc welder"
 	icon_state = "psi_arc"
