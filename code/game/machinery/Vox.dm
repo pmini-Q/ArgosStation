@@ -50,7 +50,8 @@
 		return
 	to_chat(M, "The pod's tendrils reach into your skull, extracting your stack as your old body is recycled and the biomass used to create a new Armalis bioform. You can now only speak Vox-Pigdin due to the restructuring of your neural pathways.")
 	occupant.set_species(SPECIES_VOX_ARMALIS)
-	occupant.add_language(langs)
+	for (var/lang in langs)
+		occupant.add_language(lang)
 	occupant.change_appearance (APPEARANCE_EYE_COLOR)
 	go_out()
 	used = 1
