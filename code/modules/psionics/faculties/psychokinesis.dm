@@ -17,12 +17,16 @@
 	cost =            25
 	cooldown =        100
 	min_rank =        PSI_RANK_OPERANT
-	use_description = "Click on or otherwise activate an empty hand while on harm intent to manifest a psychokinetic cutting blade. The power the blade will vary based on your mastery of the faculty."
+	use_description = "Click on or otherwise activate an empty hand while not targeting the hands on harm intent to manifest a psychokinetic cutting blade. The power the blade will vary based on your mastery of the faculty."
 	admin_log = FALSE
 
 /decl/psionic_power/psychokinesis/psiblade/invoke(var/mob/living/user, var/mob/living/target)
 	if((target && user != target) || user.a_intent != I_HURT)
 		return FALSE
+
+	if(user.zone_sel.selecting in list(BP_L_HAND, BP_R_HAND))
+		return FALSE
+
 	. = ..()
 	if(.)
 		switch(user.psi.get_rank(faculty))
@@ -59,7 +63,7 @@
 /decl/psionic_power/psychokinesis/telekinesis
 	name =            "Telekinesis"
 	cost =            20
-	cooldown =        25
+	cooldown =        20
 	use_ranged =      TRUE
 	use_manifest =    FALSE
 	min_rank =        PSI_RANK_GRANDMASTER
@@ -67,7 +71,9 @@
 	admin_log = FALSE
 	use_sound = 'sound/effects/psi/power_used.ogg'
 	var/global/list/valid_machine_types = list(
-		/obj/machinery/door
+		/obj/machinery/door,
+		/obj/machinery/light_switch,
+		/obj/machinery/access_button
 	)
 
 /decl/psionic_power/psychokinesis/telekinesis/invoke(var/mob/living/user, var/mob/living/target)
