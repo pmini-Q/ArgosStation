@@ -199,6 +199,7 @@
 						qdel(src)
 					else if(!isnull(seed.chems[/datum/reagent/resinpulp]))
 						user.visible_message("<span class='notice'>\The [user] cuts \the [src] into slabs.</span>")
+						new /obj/item/stack/material/wood/vox(user.loc)
 						qdel(src)
 					return
 				else if(!isnull(seed.chems[/datum/reagent/drink/juice/potato]))
