@@ -36,6 +36,7 @@
 
 	var/list/click_params = params2list(params)
 	if(click_params["shift"])
+		return
 		// Placeholder for info popup on shift click a la psi_hub button.
 
 	if(click_params["alt"])
