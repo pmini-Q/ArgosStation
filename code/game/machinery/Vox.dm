@@ -116,11 +116,11 @@
 
 /obj/machinery/voxfab/on_update_icon()
 	if(state == VG_NO_BEAKER)
-		icon_state = "printer-open"
+		icon_state = "printer_open"
 	else if(state == VG_READY || state == VG_COMPLETE)
 		icon_state = "printer"
 	else
-		icon_state = "printer-working"
+		icon_state = "printer_working"
 	return
 
 /obj/machinery/voxfab/components_are_accessible(path)
