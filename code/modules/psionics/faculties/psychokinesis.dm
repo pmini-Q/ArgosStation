@@ -14,15 +14,19 @@
 // Psiblade, allows you to manifest a psychic blade. Lethality increases with Psychokinesis rank.
 /decl/psionic_power/psychokinesis/psiblade
 	name =            "Psiblade"
-	cost =            10
-	cooldown =        30
+	cost =            25
+	cooldown =        100
 	min_rank =        PSI_RANK_OPERANT
-	use_description = "Click on or otherwise activate an empty hand while on harm intent to manifest a psychokinetic cutting blade. The power the blade will vary based on your mastery of the faculty."
+	use_description = "Click on or otherwise activate an empty hand while not targeting the hands on harm intent to manifest a psychokinetic cutting blade. The power the blade will vary based on your mastery of the faculty."
 	admin_log = FALSE
 
 /decl/psionic_power/psychokinesis/psiblade/invoke(var/mob/living/user, var/mob/living/target)
 	if((target && user != target) || user.a_intent != I_HURT)
 		return FALSE
+
+	if(user.zone_sel.selecting in list(BP_L_HAND, BP_R_HAND))
+		return FALSE
+
 	. = ..()
 	if(.)
 		switch(user.psi.get_rank(faculty))
@@ -40,8 +44,8 @@
 // Tinker, allows you to manifest psychokinetic tools.
 /decl/psionic_power/psychokinesis/tinker
 	name =            "Tinker"
-	cost =            5
-	cooldown =        10
+	cost =            15
+	cooldown =        20
 	min_rank =        PSI_RANK_MASTER
 	use_description = "Click on or otherwise activate an empty hand while on help intent to manifest a psychokinetic tool. Use it in-hand to switch between tool types."
 	admin_log = FALSE
@@ -58,8 +62,8 @@
 // Telekinesis, allows you to manipulate objects, mobs and machinery at a distance.
 /decl/psionic_power/psychokinesis/telekinesis
 	name =            "Telekinesis"
-	cost =            5
-	cooldown =        10
+	cost =            20
+	cooldown =        20
 	use_ranged =      TRUE
 	use_manifest =    FALSE
 	min_rank =        PSI_RANK_GRANDMASTER
@@ -67,7 +71,9 @@
 	admin_log = FALSE
 	use_sound = 'sound/effects/psi/power_used.ogg'
 	var/global/list/valid_machine_types = list(
-		/obj/machinery/door
+		/obj/machinery/door,
+		/obj/machinery/light_switch,
+		/obj/machinery/access_button
 	)
 
 /decl/psionic_power/psychokinesis/telekinesis/invoke(var/mob/living/user, var/mob/living/target)
@@ -102,11 +108,11 @@
 
 // PARAMOUNT POWERS
 
-// Teleport, allows you to locally teleport short distances.
-/decl/psionic_power/psychokinesis/teleport
-	name =            "Teleport"
-	cost =            28
-	cooldown =        150
+// Translocate, allows you to locally teleport short distances.
+/decl/psionic_power/psychokinesis/translocate
+	name =            "Translocate"
+	cost =            38
+	cooldown =        180
 	use_ranged =      TRUE
 	use_manifest =    FALSE
 	min_rank =        PSI_RANK_PARAMOUNT
@@ -133,7 +139,7 @@
 				to_chat(user, "<span class='warning'>You cannot teleport to a location with solid objects.</span>")
 				return FALSE
 
-			user.visible_message("<span class='notice'>\The [user] makes a snapping motion with their arms.</span>")
+			user.visible_message("<span class='notice'>\The [user] makes a snapping motion with \his arms.</span>")
 			user.phase_out(get_turf(user))
 			user.forceMove(target)
 			user.phase_in(get_turf(user))
