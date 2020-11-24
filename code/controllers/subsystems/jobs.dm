@@ -464,6 +464,32 @@ SUBSYSTEM_DEF(jobs)
 		// Transfers the skill settings for the job to the mob
 		H.skillset.obtain_from_client(job, H.client)
 
+		// I'm only doing this here because I don't know where else to put it...
+		// ...And I want it to be above job.setup_account(H) since that also puts stuff in memory.
+		if(H.get_species() == SPECIES_BOOSTER)
+			var/rememberedMods = "<b>Your [H.get_species()] modifiers are:</b><br>"
+			// Add something here about visible mods, ie: "You have a pair of cat ears." etc
+			if(H.species.get_brute_mod(H))
+				rememberedMods += "Brute resistance: [H.species.get_brute_mod(H)]x<br>"
+			if(H.species.get_burn_mod(H))
+				rememberedMods += "Burn resistance: [H.species.get_burn_mod(H)]x<br>"
+			if(H.species.get_toxins_mod(H))
+				rememberedMods += "Toxin resistance: [H.species.get_toxins_mod(H)]x<br>"
+			if(H.species.get_radiation_mod(H))
+				rememberedMods += "Radiation resistance: [H.species.get_radiation_mod(H)]x<br>"
+			if(H.species.get_slowdown(H))
+				var/slowdown = H.species.get_slowdown(H)
+				var/speed = ""
+				if(slowdown == 0.5)
+					speed = "slower than"
+				else if(slowdown == -0.5)
+					speed = "faster than"
+				else if(slowdown == 0)
+					speed = "on par with"
+				rememberedMods += "Your slowdown modifier is: [slowdown], making you [speed] the average for a [H.get_species()].<br>"
+
+			H.StoreMemory(rememberedMods, /decl/memory_options/system)
+
 		//Equip job items.
 		job.setup_account(H)
 
@@ -561,6 +587,10 @@ SUBSYSTEM_DEF(jobs)
 
 	if(job.req_admin_notify)
 		to_chat(H, "<b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b>")
+
+	if(H.get_species() == SPECIES_BOOSTER())
+		// Mostly booster specific right now.
+		to_chat(H, SPAN_NOTICE("As a [H.get_species()], your notes have specifics on your current modifiers."))
 
 	//Gives glasses to the vision impaired
 	if(H.disabilities & NEARSIGHTED)
