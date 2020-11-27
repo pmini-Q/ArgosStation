@@ -167,11 +167,11 @@
 	head_position = 0
 	supervisors = "the Captain"
 	required_language = LANGUAGE_SPACER
-	outfit_type = /decl/hierarchy/outfit/job/bearcat/enforcer
+	outfit_type = /decl/hierarchy/outfit/job/bearcat/security/enforcer
 	alt_titles = list(
 		"Hired Goon",
 		"Loss Prevention Associate" = /decl/hierarchy/outfit/job/bearcat/enforcer/lossprev,
-		"Marshal" = /decl/hierarchy/outfit/job/bearcat/enforcer/marshal)
+		"Marshal" = /decl/hierarchy/outfit/job/bearcat/security/enforcer/marshal)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_BASIC,
 	                    SKILL_COMBAT      = SKILL_BASIC,
@@ -190,7 +190,7 @@
 	spawn_positions = 2
 	supervisors = "the Captain and the Enforcer"
 	required_language = LANGUAGE_SPACER
-	outfit_type = /decl/hierarchy/outfit/job/bearcat/deputy
+	outfit_type = /decl/hierarchy/outfit/job/bearcat/security
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_BASIC,
 	                    SKILL_COMBAT      = SKILL_BASIC,
@@ -292,37 +292,24 @@
 	r_pocket = /obj/item/device/radio
 	id_type = /obj/item/weapon/card/id/gold
 
-/decl/hierarchy/outfit/job/bearcat/enforcer
-	name = BEARCAT_OUTFIT_JOB_NAME("Enforcer")
-	uniform = /obj/item/clothing/under/syndicate/tacticool
-	suit = /obj/item/clothing/suit/armor/pcarrier/medium
-	head = /obj/item/clothing/head/helmet
-	mask = /obj/item/clothing/mask/gas/half
-	gloves = /obj/item/clothing/gloves/thick/swat
-	belt = /obj/item/weapon/melee/baton/loaded
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud
-	shoes = /obj/item/clothing/shoes/dutyboots
-	r_pocket = /obj/item/device/radio
-	l_pocket = /obj/item/device/flash
-	l_hand = /obj/item/weapon/handcuffs
-	id_type = /obj/item/weapon/card/id/security/head
-	pda_type = /obj/item/modular_computer/pda/security
-
-/decl/hierarchy/outfit/job/bearcat/deputy
+/decl/hierarchy/outfit/job/bearcat/security
 	name = BEARCAT_OUTFIT_JOB_NAME("Deputy")
 	uniform = /obj/item/clothing/under/syndicate/tacticool
 	suit = /obj/item/clothing/suit/armor/pcarrier/medium
 	head = /obj/item/clothing/head/helmet
 	mask = /obj/item/clothing/mask/gas/half
 	gloves = /obj/item/clothing/gloves/thick/swat
-	belt = /obj/item/weapon/melee/baton/loaded
+	belt = /obj/item/weapon/storage/belt/holster/security
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud
 	shoes = /obj/item/clothing/shoes/dutyboots
 	r_pocket = /obj/item/device/radio
 	l_pocket = /obj/item/device/flash
-	l_hand = /obj/item/weapon/handcuffs
 	id_type = /obj/item/weapon/card/id/security
 	pda_type = /obj/item/modular_computer/pda/security
+
+/decl/hierarchy/outfit/job/bearcat/security/enforcer
+	name = BEARCAT_OUTFIT_JOB_NAME("Enforcer")
+	id_type = /obj/item/weapon/card/id/security/head
 
 /decl/hierarchy/outfit/job/bearcat/captain/post_equip(var/mob/living/carbon/human/H)
 	..()
@@ -387,9 +374,8 @@
 	name = BEARCAT_OUTFIT_JOB_NAME("Musician")
 	l_hand = /obj/item/device/synthesized_instrument/guitar
 
-/decl/hierarchy/outfit/job/bearcat/enforcer/marshal
+/decl/hierarchy/outfit/job/bearcat/security/enforcer/marshal
 	suit = /obj/item/clothing/suit/armor/hos/jensen
-	belt = /obj/item/weapon/gun/energy/gun/secure/preauthorized
 
 /decl/hierarchy/outfit/job/bearcat/enforcer/lossprev
 	suit = /obj/item/clothing/suit/armor/pcarrier/medium/nt
