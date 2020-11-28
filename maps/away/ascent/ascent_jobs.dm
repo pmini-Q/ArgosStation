@@ -211,6 +211,7 @@
 	info = "You are a Monarch Serpentid Worker serving as an attendant to your Queen on this vessel. Serve her however she requires."
 	set_species_on_join = SPECIES_MONARCH_WORKER
 	outfit_type = /decl/hierarchy/outfit/job/ascent/worker
+	requires_supervisor = "Serpentid Queen"
 	min_skill = list(SKILL_EVA = SKILL_ADEPT,
 					SKILL_HAULING = SKILL_ADEPT,
 					SKILL_COMBAT = SKILL_ADEPT,
