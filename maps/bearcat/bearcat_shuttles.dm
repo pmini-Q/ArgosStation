@@ -64,8 +64,17 @@
 	name = "Near FTV Starboard Astern"
 	landmark_tag = "nav_bearcat_below_starboardastern"
 
-//centcom shuttles
+/obj/effect/shuttle_landmark/below_port
+	name = "FTV Port"
+	landmark_tag = "nav_bearcat_below_port"
 
+/obj/effect/shuttle_landmark/fore_starboard
+	name = "FTV Fore Starboard"
+	landmark_tag = "nav_bearcat_fore_starboard"
+
+/obj/effect/shuttle_landmark/aft_starboard
+	name = "FTV Aft Starboard"
+	landmark_tag = "nav_bearcat_aft_starboard"
 
 //admin
 /datum/shuttle/autodock/ferry/administration
