@@ -81,11 +81,11 @@
 		msg += "[T.He] [T.has] [back.get_examine_line()] on [T.his] back.\n"
 
 	//left hand
-	if(l_hand)
+	if(l_hand && !istype(l_hand, /obj/item/psychic_power))
 		msg += "[T.He] [T.is] holding [l_hand.get_examine_line()] in [T.his] left hand.\n"
 
 	//right hand
-	if(r_hand)
+	if(r_hand && !istype(r_hand, /obj/item/psychic_power))
 		msg += "[T.He] [T.is] holding [r_hand.get_examine_line()] in [T.his] right hand.\n"
 
 	//gloves
@@ -111,6 +111,9 @@
 	//eyes
 	if(glasses && !skipeyes)
 		msg += "[T.He] [T.has] [glasses.get_examine_line()] covering [T.his] eyes.\n"
+	else if(!glasses && !skipeyes)
+		if(psi && psi.use_eye_glow)
+			msg += "<b><font color='[psi.eye_glow_colour]'>[T.His] eyes are flared with a bright coloured glow!</font></b>\n"
 
 	//left ear
 	if(l_ear && !skipears)

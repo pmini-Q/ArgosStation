@@ -36,3 +36,19 @@
 	display_name = "tacticool turtleneck"
 	path = /obj/item/clothing/under/syndicate/tacticool
 	slot = slot_w_uniform
+
+/datum/gear/tactical/fleet_officer_ceremonial_sword
+	display_name = "fleet officer's ceremonial sword"
+	path = /obj/item/weapon/material/sword/replica/officersword
+
+/datum/gear/tactical/army_ceremonial_sword
+	display_name = "army NCO's ceremonial sword"
+	path = /obj/item/weapon/material/sword/replica/officersword/army
+
+/datum/gear/tactical/army_officer_ceremonial_sword
+	display_name = "army officer's ceremonial sword"
+	path = /obj/item/weapon/material/sword/replica/officersword/armyofficer
+
+/datum/gear/tactical/pettyofficer_ceremonial_sword
+	display_name = "chief petty officer's ceremonial cutlass"
+	path = /obj/item/weapon/material/sword/replica/officersword/pettyofficer

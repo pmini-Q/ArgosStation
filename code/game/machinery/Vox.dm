@@ -41,6 +41,7 @@
 	M.stop_pulling()
 	M.forceMove(src)
 	occupant = M
+	var/list/langs = list(occupant.languages)
 	icon_state = "pod_big"
 	SetName("[name] ([occupant])")
 	if(alert("You feel the pod closing around you, glistening tendrils reaching inwards. Are you sure you want to become a Vox Armalis?", "Armalis Transformation", "Yes", "No") == "No")
@@ -49,7 +50,8 @@
 		return
 	to_chat(M, "The pod's tendrils reach into your skull, extracting your stack as your old body is recycled and the biomass used to create a new Armalis bioform. You can now only speak Vox-Pigdin due to the restructuring of your neural pathways.")
 	occupant.set_species(SPECIES_VOX_ARMALIS)
-	occupant.add_language(LANGUAGE_VOX)
+	for (var/lang in langs)
+		occupant.add_language(lang)
 	occupant.change_appearance (APPEARANCE_EYE_COLOR)
 	go_out()
 	used = 1
@@ -114,11 +116,11 @@
 
 /obj/machinery/voxfab/on_update_icon()
 	if(state == VG_NO_BEAKER)
-		icon_state = "printer-open"
+		icon_state = "printer_open"
 	else if(state == VG_READY || state == VG_COMPLETE)
 		icon_state = "printer"
 	else
-		icon_state = "printer-working"
+		icon_state = "printer_working"
 	return
 
 /obj/machinery/voxfab/components_are_accessible(path)

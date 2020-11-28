@@ -75,3 +75,25 @@
 /obj/effect/shuttle_landmark/aft_starboard
 	name = "FTV Aft Starboard"
 	landmark_tag = "nav_bearcat_aft_starboard"
+
+//admin
+/datum/shuttle/autodock/ferry/administration
+	name = "Administration"
+	warmup_time = 10	//want some warmup time so people can cancel.
+	shuttle_area = /area/shuttle/administration/centcom
+	dock_target = "admin_shuttle"
+	waypoint_station = "nav_admin_start"
+	waypoint_offsite = "nav_admin_out"
+
+/obj/effect/shuttle_landmark/admin/start
+	name = "Centcom"
+	landmark_tag = "nav_admin_start"
+	docking_controller = "admin_shuttle"
+	base_area = /area/centcom
+	base_turf = /turf/simulated/floor/plating
+
+/obj/effect/shuttle_landmark/admin/out
+	name = "Docking Bay"
+	landmark_tag = "nav_admin_out"
+	docking_controller = "cargo"
+

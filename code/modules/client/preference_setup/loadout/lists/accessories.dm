@@ -93,6 +93,10 @@
 	path = /obj/item/clothing/accessory/armband/hydro
 	allowed_roles = list(/datum/job/rd, /datum/job/scientist, /datum/job/assistant)
 
+/datum/gear/accessory/armband_psi
+	display_name = "psi armband"
+	path = /obj/item/clothing/accessory/armband/psi
+
 /datum/gear/accessory/armband_nt
 	display_name = "corporate armband"
 	path = /obj/item/clothing/accessory/armband/whitered
