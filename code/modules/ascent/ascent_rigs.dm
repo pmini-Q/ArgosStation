@@ -28,10 +28,11 @@
 	update_visible_name = TRUE
 	icon_override = 'icons/mob/species/mantid/onmob_back_alate.dmi'
 	sprite_sheets = list(
-		SPECIES_MANTID_GYNE =  'icons/mob/species/mantid/onmob_back_gyne.dmi',
-		SPECIES_MANTID_ALATE = 'icons/mob/species/mantid/onmob_back_alate.dmi',
-		SPECIES_NABBER =       'icons/mob/species/nabber/onmob_back_gas.dmi'
-		)
+		SPECIES_MANTID_GYNE =    'icons/mob/species/mantid/onmob_back_gyne.dmi',
+		SPECIES_MANTID_ALATE =   'icons/mob/species/mantid/onmob_back_alate.dmi',
+		SPECIES_NABBER =         'icons/mob/species/nabber/onmob_back_gas.dmi',
+		SPECIES_MONARCH_QUEEN =  'icons/mob/species/nabber/msq/onmob_back_msq.dmi'
+	)
 	initial_modules = list(
 		/obj/item/rig_module/vision/thermal,
 		/obj/item/rig_module/ai_container,
@@ -213,6 +214,21 @@
 		list("tramadol",            "tramadol",            /datum/reagent/tramadol,      20)
 	)
 
+/obj/item/rig_module/chem_dispenser/nabber
+	name = "serpentid chemical injector"
+	desc = "A compact chemical dispenser of mantid design."
+	interface_name = "serpentid chemical injector"
+	interface_desc = "A compact chemical dispenser of mantid design."
+	icon = 'icons/obj/ascent.dmi'
+	icon_state = "injector"
+	charges = list(
+		list("tramadol",            "tramadol",            /datum/reagent/tramadol,     	  20),
+		list("dexalin plus",        "dexalin plus",        /datum/reagent/dexalinp,     	  20),
+		list("inaprovaline",        "inaprovaline",        /datum/reagent/inaprovaline,  	  20),
+		list("spaceacillin",  		"spaceacillin",		   /datum/reagent/spaceacillin,       20),
+		list("glucose",             "glucose",             /datum/reagent/nutriment/glucose,  20)
+	)
+
 // Rig definitions.
 /obj/item/weapon/rig/mantid/gyne
 	name = "gyne combat exosuit"
@@ -224,6 +240,14 @@
 		bomb = ARMOR_BOMB_RESISTANT,
 		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_SHIELDED
+	)
+	allowed = list(
+		/obj/item/clustertool,
+		/obj/item/weapon/gun/energy/particle,
+		/obj/item/weapon/weldingtool/electric/mantid,
+		/obj/item/device/multitool/mantid,
+		/obj/item/stack/medical/resin,
+		/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle/ascent
 	)
 	icon_override = 'icons/mob/species/mantid/onmob_back_gyne.dmi'
 	mantid_caste = SPECIES_MANTID_GYNE
@@ -244,18 +268,26 @@
 	)
 
 /obj/item/weapon/rig/mantid/nabber
-	name = "serpentid support exosuit"
+	name = "serpentid combat exosuit"
 	icon_override = 'icons/mob/species/nabber/onmob_back_gas.dmi'
 	mantid_caste = SPECIES_NABBER
 	air_type =   /obj/item/weapon/tank/mantid/reactor/oxygen
 	chest_type = /obj/item/clothing/suit/space/rig/mantid/serpentid
 	boot_type =  null
+	allowed = list(
+		/obj/item/clustertool,
+		/obj/item/weapon/gun/energy/particle,
+		/obj/item/weapon/weldingtool/electric/mantid,
+		/obj/item/device/multitool/mantid,
+		/obj/item/stack/medical/resin,
+		/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle/ascent
+	)
 
 /obj/item/clothing/suit/space/rig/mantid/serpentid
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET
 
 /obj/item/weapon/rig/mantid/nabber/queen
-	name = "small support exosuit"
+	name = "small combat exosuit"
 	mantid_caste = SPECIES_MONARCH_QUEEN
 	initial_modules = list(
 		/obj/item/rig_module/vision/thermal,
@@ -284,7 +316,7 @@
 /obj/item/clothing/head/helmet/space/rig/mantid
 	light_color = "#00ffff"
 	desc = "More like a torpedo casing than a helmet."
-	species_restricted = list(SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_NABBER)
+	species_restricted = list(SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_NABBER, SPECIES_MONARCH_QUEEN)
 	sprite_sheets = list(
 		SPECIES_MANTID_GYNE =  'icons/mob/species/mantid/onmob_head_gyne.dmi',
 		SPECIES_MANTID_ALATE = 'icons/mob/species/mantid/onmob_head_alate.dmi',
@@ -293,11 +325,12 @@
 
 /obj/item/clothing/suit/space/rig/mantid
 	desc = "It's closer to a mech than a suit."
-	species_restricted = list(SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_NABBER)
+	species_restricted = list(SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_NABBER, SPECIES_MONARCH_QUEEN)
 	sprite_sheets = list(
 		SPECIES_MANTID_GYNE =  'icons/mob/species/mantid/onmob_suit_gyne.dmi',
 		SPECIES_MANTID_ALATE = 'icons/mob/species/mantid/onmob_suit_alate.dmi',
-		SPECIES_NABBER =       'icons/mob/species/nabber/onmob_suit_gas.dmi'
+		SPECIES_NABBER =       'icons/mob/species/nabber/onmob_suit_gas.dmi',
+		SPECIES_MONARCH_QUEEN =  'icons/mob/species/nabber/msq/onmob_head_msq.dmi'
 		)
 	allowed = list(
 		/obj/item/clustertool,
@@ -318,11 +351,12 @@
 
 /obj/item/clothing/gloves/rig/mantid
 	desc = "They look like a cross between a can opener and a Swiss army knife the size of a shoebox."
-	species_restricted = list(SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_NABBER)
+	species_restricted = list(SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_NABBER, SPECIES_MONARCH_QUEEN)
 	sprite_sheets = list(
 		SPECIES_MANTID_GYNE =  'icons/mob/species/mantid/onmob_gloves_gyne.dmi',
 		SPECIES_MANTID_ALATE = 'icons/mob/species/mantid/onmob_gloves_alate.dmi',
-		SPECIES_NABBER =       'icons/mob/species/nabber/onmob_hands_gas.dmi'
+		SPECIES_NABBER =       'icons/mob/species/nabber/onmob_hands_gas.dmi',
+		SPECIES_MONARCH_QUEEN =  'icons/mob/species/nabber/msq/onmob_head_msq.dmi'
 		)
 
 //Add SeedShip Specific Exosuits
@@ -377,6 +411,7 @@
 	)
 
 /obj/item/weapon/rig/mantid/nabber/queen/seed
+	name = "small support exosuit"
 	online_slowdown = 1
 	armor = list(
 		melee = ARMOR_MELEE_MAJOR,
@@ -390,7 +425,7 @@
 	initial_modules = list(
 		/obj/item/rig_module/vision/nvg,
 		/obj/item/rig_module/ai_container,
-		/obj/item/rig_module/chem_dispenser/mantid,
+		/obj/item/rig_module/chem_dispenser/nabber,
 		/obj/item/rig_module/device/multitool,
 		/obj/item/rig_module/device/cable_coil,
 		/obj/item/rig_module/device/welder,
@@ -398,8 +433,9 @@
 		/obj/item/rig_module/mounted/plasmacutter,
 		/obj/item/rig_module/maneuvering_jets
 	)
-		
+
 /obj/item/weapon/rig/mantid/nabber/seed
+	name = "serpentid support exosuit"
 	online_slowdown = 1
 	armor = list(
 		melee = ARMOR_MELEE_MAJOR,
@@ -413,7 +449,7 @@
 	initial_modules = list(
 		/obj/item/rig_module/vision/nvg,
 		/obj/item/rig_module/ai_container,
-		/obj/item/rig_module/chem_dispenser/mantid,
+		/obj/item/rig_module/chem_dispenser/nabber,
 		/obj/item/rig_module/device/multitool,
 		/obj/item/rig_module/device/cable_coil,
 		/obj/item/rig_module/device/welder,
