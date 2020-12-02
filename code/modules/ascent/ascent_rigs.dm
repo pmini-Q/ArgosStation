@@ -289,6 +289,7 @@
 /obj/item/weapon/rig/mantid/nabber/queen
 	name = "small combat exosuit"
 	mantid_caste = SPECIES_MONARCH_QUEEN
+	icon_override = 'icons/mob/species/mantid/onmob_back_msq.dmi'
 	initial_modules = list(
 		/obj/item/rig_module/vision/thermal,
 		/obj/item/rig_module/ai_container,
@@ -320,7 +321,8 @@
 	sprite_sheets = list(
 		SPECIES_MANTID_GYNE =  'icons/mob/species/mantid/onmob_head_gyne.dmi',
 		SPECIES_MANTID_ALATE = 'icons/mob/species/mantid/onmob_head_alate.dmi',
-		SPECIES_NABBER =       'icons/mob/species/nabber/onmob_head_gas.dmi'
+		SPECIES_NABBER =       'icons/mob/species/nabber/onmob_head_gas.dmi',
+		SPECIES_MONARCH_QUEEN = 'icons/mob/species/nabber/msq/onmob_head_msq.dmi'
 		)
 
 /obj/item/clothing/suit/space/rig/mantid
@@ -330,7 +332,7 @@
 		SPECIES_MANTID_GYNE =  'icons/mob/species/mantid/onmob_suit_gyne.dmi',
 		SPECIES_MANTID_ALATE = 'icons/mob/species/mantid/onmob_suit_alate.dmi',
 		SPECIES_NABBER =       'icons/mob/species/nabber/onmob_suit_gas.dmi',
-		SPECIES_MONARCH_QUEEN =  'icons/mob/species/nabber/msq/onmob_head_msq.dmi'
+		SPECIES_MONARCH_QUEEN =  'icons/mob/species/nabber/msq/onmob_suit_msq.dmi'
 		)
 	allowed = list(
 		/obj/item/clustertool,
@@ -356,7 +358,7 @@
 		SPECIES_MANTID_GYNE =  'icons/mob/species/mantid/onmob_gloves_gyne.dmi',
 		SPECIES_MANTID_ALATE = 'icons/mob/species/mantid/onmob_gloves_alate.dmi',
 		SPECIES_NABBER =       'icons/mob/species/nabber/onmob_hands_gas.dmi',
-		SPECIES_MONARCH_QUEEN =  'icons/mob/species/nabber/msq/onmob_head_msq.dmi'
+		SPECIES_MONARCH_QUEEN =  'icons/mob/species/nabber/msq/onmob_hands_msq.dmi'
 		)
 
 //Add SeedShip Specific Exosuits
