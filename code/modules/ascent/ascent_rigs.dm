@@ -289,7 +289,7 @@
 /obj/item/weapon/rig/mantid/nabber/queen
 	name = "small combat exosuit"
 	mantid_caste = SPECIES_MONARCH_QUEEN
-	icon_override = 'icons/mob/species/mantid/onmob_back_msq.dmi'
+	icon_override = 'icons/mob/species/nabber/msq/onmob_back_msq.dmi'
 	initial_modules = list(
 		/obj/item/rig_module/vision/thermal,
 		/obj/item/rig_module/ai_container,
