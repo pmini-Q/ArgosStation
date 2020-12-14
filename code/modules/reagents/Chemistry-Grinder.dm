@@ -308,10 +308,9 @@
 	blacklisted_types = list(/obj/item/stack/material)
 	bag_whitelist = list(/obj/item/weapon/storage/plants)
 	item_size_limit = ITEM_SIZE_SMALL
-	skill_to_check = SKILL_COOKING
 
 /obj/machinery/reagentgrinder/juicer/attempt_skill_effect(mob/living/carbon/human/user)
-	if(!istype(user) || !prob(user.skill_fail_chance(skill_to_check, 50, SKILL_BASIC)))
+	if(!istype(user) || (!prob(user.skill_fail_chance(SKILL_COOKING, 50, SKILL_BASIC)) || !prob(user.skill_fail_chance(SKILL_MIXOLOGY, 50, SKILL_BASIC))))
 		return
 	visible_message(SPAN_NOTICE("\The [src] whirrs violently and spills its contents all over \the [user]!"))
 	if(beaker && beaker.reagents)

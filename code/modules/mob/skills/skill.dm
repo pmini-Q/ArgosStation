@@ -220,12 +220,23 @@ GLOBAL_LIST_EMPTY(skills)
 /decl/hierarchy/skill/culinary/cooking
 	ID = "1"
 	name = "Cooking"
-	desc = "Describes a character's skill at preparing meals and other consumable goods. This includes mixing alcoholic beverages."
+	desc = "Describes a character's skill at preparing meals and other consumable foodstuffs."
 	levels = list( "Unskilled"			= "You barely know anything about cooking, and stick to vending machines when you can. The microwave is a device of black magic to you, and you avoid it when possible.",
-						"Basic"				= "You can make simple meals and do the cooking for your family. Things like spaghetti, grilled cheese, or simple mixed drinks are your usual fare.<br>- You can safely use the blender.",
-						"Trained"			= "You can make most meals while following instructions, and they generally turn out well. You have some experience with hosting, catering, and/or bartending.<br>- You can fully operate the drink dispensers.",
-						"Experienced"		= "You can cook professionally, keeping an entire crew fed easily. Your food is tasty and you don't have a problem with tricky or complicated dishes. You can be depended on to make just about any commonly-served drink.",
-						"Master"		= "Not only are you good at cooking and mixing drinks, but you can manage a kitchen staff and cater for special events. You can safely prepare exotic foods and drinks that would be poisonous if prepared incorrectly.")
+						"Basic"				= "You can make simple meals and do the cooking for your family. Things like spaghetti or grilled cheese are your usual fare.",
+						"Trained"			= "You can make most meals while following instructions, and they generally turn out well. You have some experience with hosting and/or catering.",
+						"Experienced"		= "You can cook professionally, keeping an entire crew fed easily. Your food is tasty and you don't have a problem with tricky or complicated dishes.",
+						"Master"		= "Not only are you good at cooking, but you can manage a kitchen staff and cater for special events. You can safely prepare exotic foods that would be poisonous if prepared incorrectly.")
+	difficulty = SKILL_EASY
+
+/decl/hierarchy/skill/culinary/mixology
+	ID = "2"
+	name = "Mixology"
+	desc = "Describes a character's skill at preparing cocktails and drinks. This includes mixing alcoholic beverages."
+	levels = list( "Unskilled"			= "You barely know anything about cocktails, and stick to vending machines when you can. A cocktail shaker is a device of black magic to you.",
+						"Basic"				= "You can make simple cocktails and do the mixing for your colleagues. Things like a gin and tonic or a tricordrazine surprise are your usual fare.<br>- You can use a cocktail shaker without shaking the contents into oblivion, or more likely, all over yourself, the floor, or anyone/anything else in the immediate vicinity.",
+						"Trained"			= "You can make most drinks while following instructions, and they generally turn out well. You may have some experience with hosting or bartending.<br>- You can fully operate drinks dispensers.",
+						"Experienced"		= "You can serve various beverages professionally, keeping an entire crew hydrated easily. Your beverages are tasty and you don't have a problem with tricky or complicated concoctions. You can be depended on to make just about any commonly-served drink.",
+						"Master"		= "Not only are you good at mixing drinks, but you can manage a bartending staff and cater for special events. You can safely prepare exotic drinks that would be poisonous if prepared incorrectly.")
 	difficulty = SKILL_EASY
 
 // Category: Security

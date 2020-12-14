@@ -22,6 +22,7 @@
 	                    SKILL_COMPUTER = SKILL_MAX,
 	                    SKILL_BOTANY = SKILL_MAX,
 	                    SKILL_COOKING = SKILL_MAX,
+	                    SKILL_MIXOLOGY = SKILL_MAX,
 	                    SKILL_COMBAT = SKILL_MAX,
 	                    SKILL_WEAPONS = SKILL_MAX,
 	                    SKILL_FORENSICS = SKILL_MAX,

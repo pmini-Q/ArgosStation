@@ -6,14 +6,14 @@
 	sprites = list(
 		"Drone" = "drone-ascent"
 	)
-	// The duplicate clustertools in this list are so that they can set up to 
+	// The duplicate clustertools in this list are so that they can set up to
 	// hack doors, windows etc. without having to constantly cycle through tools.
 	equipment = list(
 		/obj/item/device/flash,
 		/obj/item/weapon/gun/energy/particle/small,
 		/obj/item/device/multitool/mantid,
 		/obj/item/clustertool,
-		/obj/item/clustertool, 
+		/obj/item/clustertool,
 		/obj/item/clustertool,
 		/obj/item/weapon/soap,
 		/obj/item/weapon/mop/advanced,
@@ -57,7 +57,7 @@
 		LANGUAGE_SKRELLIAN        = TRUE,
 		LANGUAGE_NABBER           = TRUE
 	)
-	
+
 	skills = list(
 		SKILL_BUREAUCRACY	= SKILL_ADEPT,
 		SKILL_FINANCE		= SKILL_EXPERT,
@@ -68,6 +68,7 @@
 		SKILL_COMPUTER		= SKILL_EXPERT,
 		SKILL_BOTANY		= SKILL_EXPERT,
 		SKILL_COOKING		= SKILL_EXPERT,
+		SKILL_MIXOLOGY		= SKILL_EXPERT,
 		SKILL_COMBAT		= SKILL_EXPERT,
 		SKILL_WEAPONS		= SKILL_EXPERT,
 		SKILL_FORENSICS		= SKILL_EXPERT,

@@ -25,6 +25,7 @@
 #define SKILL_BUREAUCRACY   /decl/hierarchy/skill/clerical/bureaucracy
 #define SKILL_FINANCE       /decl/hierarchy/skill/clerical/finance
 #define SKILL_COOKING       /decl/hierarchy/skill/culinary/cooking
+#define SKILL_MIXOLOGY		/decl/hierarchy/skill/culinary/mixology
 #define SKILL_FORENSICS     /decl/hierarchy/skill/security/forensics
 #define SKILL_WEAPONS       /decl/hierarchy/skill/security/weapons
 #define SKILL_ATMOS         /decl/hierarchy/skill/engineering/atmos
