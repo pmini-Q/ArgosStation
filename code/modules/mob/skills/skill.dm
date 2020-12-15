@@ -329,7 +329,18 @@ GLOBAL_LIST_EMPTY(skills)
 						"Trained"			= "You are an experienced EMT, an experienced nurse, or a medical resident. You know how to treat most illnesses and injuries, though exotic illnesses and unusual injuries may still stump you. You have probably begun to specialize in some sub-field of medicine. In emergencies, you can think fast enough to keep your patients alive, and even when you can't treat a patient, you know how to find someone who can. You can use a full-body scanner, and you know something's off about a patient with an alien parasite or cortical borer.<br>- You can fully operate Sleepers.<br>- You can apply splints without failing. You can perform simple surgery steps if you have Experienced Anatomy skill",
 						"Experienced"		= "You are a senior nurse or paramedic, or a practicing doctor. You know how to use all of the medical devices available to treat a patient. Your deep knowledge of the body and medications will let you diagnose and come up with a course of treatment for most ailments. You can perform a full-body scan thoroughly and find important information.<br>- You can fully operate Body Scanners. You can perform all surgery steps if you have Experienced Anatomy skill",
 						"Master"		= "You are an experienced doctor or an expert nurse or EMT. You've seen almost everything there is to see when it comes to injuries and illness and even when it comes to something you haven't seen, you can apply your wide knowledge base to put together a treatment. In a pinch, you can do just about any medicine-related task, but your specialty, whatever it may be, is where you really shine.")
-	difficulty = SKILL_HARD
+	difficulty = SKILL_AVERAGE
+
+/decl/hierarchy/skill/medsci/medical/get_cost(var/level)
+	switch(level)
+		if(SKILL_BASIC)
+			return difficulty
+		if(SKILL_ADEPT)
+			return 2*difficulty
+		if(SKILL_EXPERT, SKILL_PROF)
+			return 4*difficulty
+		else
+			return 0
 
 /decl/hierarchy/skill/medsci/science
 	ID = "2"
@@ -351,7 +362,18 @@ GLOBAL_LIST_EMPTY(skills)
 						"Trained"			= "You have some training in anatomy. Diagnosing broken bones, damaged ligaments, shrapnel wounds, and other trauma is straightforward for you. You can splint limbs with a good chance of success, operate a defibrillator competently, and perform CPR well. Surgery is still outside your training.<br>- You can do surgery (requires Trained Medicine skill too) but you are very likely to fail at every step. Its speed increases with level. You can perform the cybernethics procedures if you have Trained Complex Devices skill",
 						"Experienced"		= "You're a surgical resident, or an experienced medical doctor. You can put together broken bones, fix a damaged lung, patch up a liver, or remove an appendix without problems. But tricky surgeries, with an unstable patient or delicate manipulation of vital organs like the heart and brain, are at the edge of your ability, and you prefer to leave them to specialized surgeons. You can recognize when someone's anatomy is noticeably unusual. You're trained in working with several species, but you're probably better at surgery on your own species.<br>- You can do all surgery steps safely, if you have Experienced Medicine skill too.",
 						"Master"		= "You are an experienced surgeon. You can handle anything that gets rolled, pushed, or dragged into the OR, and you can keep a patient alive and stable even if there's no one to assist you. You can handle severe trauma cases or multiple organ failure, repair brain damage, and perform heart surgery. By now, you've probably specialized in one field, where you may have made new contributions to surgical technique. You can detect even small variations in the anatomy of a patient--even a changeling probably wouldn't slip by your notice, provided you could get one on the operating table.<br>- The penalty from operating on improper operating surfaces is reduced.")
-	difficulty = SKILL_HARD
+	difficulty = SKILL_AVERAGE
+
+/decl/hierarchy/skill/medsci/anatomy/get_cost(var/level)
+	switch(level)
+		if(SKILL_BASIC)
+			return difficulty
+		if(SKILL_ADEPT)
+			return 2*difficulty
+		if(SKILL_EXPERT, SKILL_PROF)
+			return 4*difficulty
+		else
+			return 0
 
 /decl/hierarchy/skill/medsci/devices
 	ID = "4"
