@@ -23,6 +23,34 @@
 	icon_state = "ears_bun"
 	name = "Ear Biomods (Rabbit)"
 
+/datum/sprite_accessory/marking/booster/ears/dog
+    icon_state = "ears_dog"
+    name = "Ear Biomods (Dog)"
+
+/datum/sprite_acessory/marking/booster/horns/bat
+	icon_state = "wings_bat"
+	name = "Horn Biomods (Bat Wings)"
+
+/datum/sprite_acessory/marking/booster/horns/hack
+	icon_state = "horns_hack"
+	name = "Horn Biomods (Hacker flesh)"
+
+/datum/sprite_acessory/marking/booster/horns/eye
+	icon_state = "horns_eye"
+	name = "Horn Biomods (Sniper eye)"
+
+/datum/sprite_acessory/marking/booster/horns/maw
+	icon_state = "teeth_maw"
+	name = "Horn Biomods (Maw)"
+
+/datum/sprite_acessory/marking/booster/horns/carp
+	icon_state = "horns_carp_frills"
+	name = "Horn Biomods (carp)"
+
+/datum/sprite_acessory/marking/booster/horns/ear
+	icon_state = "horns_ear"
+	name = "Horn Biomods (Bio radio)"
+
 /datum/sprite_accessory/marking/booster/horns/ram
 	icon_state = "horns_ram"
 	name = "Horn Biomods (Ram)"
