@@ -288,3 +288,23 @@
 	icon_state="bsposter59"
 	name = "poster - Miss Science 2299"
 	desc = "A large piece of space-resistant printed paper. This pin-up poster depicts a woman wearing a corporate labcoat, a bikini, and a sheepish grin. She's shyly posing atop some highly specialized research equipment."
+
+/decl/poster/bay_60
+	icon_state="bsposter60"
+	name = "Anti-Psi poster"
+	desc = "This poster depicts a three-eyed dark figure. The text reads: 'KEEP OUR SHIP SAFE! Report any unregistered psionic activity.'"
+
+/decl/poster/bay_61
+	icon_state="bsposter61"
+	name = "Mad Krystal poster"
+	desc = "A lawsuit waiting to happen. DORARARARARARA!"
+
+/decl/poster/bay_62
+	icon_state="bsposter62"
+	name = "Join the Foundation poster"
+	desc = "This Foundation recruitment poster consists of the Foundation logo and text in a golden font reading: 'Join Today!' you feel compelled to comply, for whatever reason."
+
+/decl/poster/bay_63
+	icon_state="bsposter63"
+	name = "SU-KE-RU poster"
+	desc = "This is a pin-up poster depicting a light-blue Skrell in a red dress. Whoever printed it must be a creep."
