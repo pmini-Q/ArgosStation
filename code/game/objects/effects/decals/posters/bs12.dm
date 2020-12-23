@@ -109,11 +109,6 @@
 	name = "Looking for a career with excitement?"
 	desc = "A recruitment poster starring a dark haired woman with glasses and a purple shirt that has \"Got Brains? Got Talent? Not afraid of electric flying monsters that want to suck the soul out of you? Then Xenobiology could use someone like you!\" written on the bottom."
 
-/decl/poster/bay_23
-	icon_state="bsposter23"
-	name = "Safety first: because electricity doesn't wait!"
-	desc = "A safety poster starring a clueless looking redhead with frazzled hair. \"Every year, hundreds of employees expose themselves to electric shock. Play it safe. Avoid suspicious doors after electrical storms, and always wear protection when doing electric maintenance.\""
-
 /decl/poster/bay_24
 	icon_state="bsposter24"
 	name = "Responsible medbay habits, No #259"
